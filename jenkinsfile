@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Call this job') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        
+        }
+        stage('Call this job') {
+            steps {
+                sh 'python3 /root/tt.py'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
