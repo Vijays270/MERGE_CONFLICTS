@@ -5,7 +5,7 @@ pipeline {
         stage('Call this job') {
             steps {
                 sh 'echo "First_job"'
-                sh 'echo "second_job"'
+                sh 'echo "second_job.."'
             }
         }
         stage('Test') {
