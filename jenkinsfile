@@ -2,26 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Call this job') {
+        stage('Build') {
             steps {
-                sh 'echo "First_job"'
-                sh 'echo "second_job.."'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "Testing.."'
-            }
-        
-        }
-        stage('Call this job') {
-            steps {
-                echo ":"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
     }
