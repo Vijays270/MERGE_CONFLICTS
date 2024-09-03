@@ -4,12 +4,13 @@ pipeline {
     stages {
         stage('Call this job') {
             steps {
-                echo 'Building..'
+                sh 'echo "First_job"'
+                sh 'echo "second_job"'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh 'echo "Testing."'
             }
         
         }
