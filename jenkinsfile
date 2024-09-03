@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Call this job') {
             steps {
-                sh 'sudo python3 /root/tt.py'
+                echo ":"
             }
         }
         stage('Deploy') {
